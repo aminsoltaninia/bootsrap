@@ -1,0 +1,82 @@
+
+//define variable
+
+$lt-gray : #ddd;
+$background-dark : #512DAB;
+$background-ligth : #9575CD;
+$background-pale : #D1C4E9;
+
+// hesigh variable
+
+$carousel-item-heigth : 300px;
+
+// define func
+
+@mixin func-Zero-margin($padin-up-down , $padi-left-right){
+       margin: 0px auto;
+       padding:  $padi-left-right $padin-up-down;
+}
+
+.row-header {
+    @include func-Zero-margin(0px, 0px)
+}
+
+.row-content{
+    @include func-Zero-margin(50px, 0px);
+    border-bottom:1px ridge;
+    min-height: 400px;
+}
+
+.footer {
+    background-color: $background-pale;
+    @include func-Zero-margin(20px, 0px);
+}
+
+.jumbotron{
+   @include func-Zero-margin(70px, 30px);
+   background: $background-ligth;
+   color: floralwhite;
+}
+
+address{
+    font-size: 80%;
+    margin: 0px;
+    color: #0f0f0f;
+}
+body{
+    padding: 50px 0px 0px 0px ;
+    z-index: 0;
+}
+
+.navbar-dark{
+    background-color: $background-dark;
+}
+
+.tab-content{
+    border-left: 1px solid $lt-gray;
+    border-right: 1px solid $lt-gray;
+    border-bottom: 1px solid $lt-gray;
+    padding: 10px;
+}
+
+
+// nested selectors 
+
+.carousel{
+    background: $background-dark;
+
+    .carousel-item{
+        height: $carousel-item-heigth;
+
+        img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            min-height: 300px;
+        }
+    }
+}
+
+#caroselToggle{
+    border: 1px solid #0f0f0f0f;
+}
